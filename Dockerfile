@@ -2,7 +2,7 @@ FROM jupyter/datascience-notebook
 
 USER root
 
-RUN apt-get install libnetcdf-dev libhdf5-dev libgeos-dev 
+RUN apt-get install -yq libnetcdf-dev libhdf5-dev libgeos-dev 
 
 RUN ln -s /usr/lib/libgeos-3.4.2.so /usr/lib/libgeos.so
 
