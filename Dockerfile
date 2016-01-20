@@ -19,7 +19,6 @@ USER jovyan
 # Install Python 2 packages
 RUN conda install --name python2 \
     'networkx=1.1*' \
-    'numpy=1.9*'\
     'pillow=3.0*'\
     'pyproj=1.9*'\
     'pil=1.1*'\
