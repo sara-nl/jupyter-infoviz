@@ -10,7 +10,8 @@ RUN wget -O basemap-1.0.7.tar.gz http://sourceforge.net/projects/matplotlib/file
         && tar xvf basemap-1.0.7.tar.gz
         && cd ./basemap-1.0.7
         && ./configure
-        && make && make install
+        && make 
+        && make install
         && /opt/conda/envs/python2/bin/python2 setup.py install
 
 USER jovyan
@@ -22,8 +23,8 @@ RUN conda install --name python2 \
     'pillow=3.0*'\
     'pyproj=1.9*'\
     'pil=1.1*'\
-    'netcdf4=1.1*'
-    'graphviz=2.38*'
+    'netcdf4=1.1*'\
+    'graphviz=2.38*'\
     && conda clean -yt
 
 RUN /opt/conda/envs/python2/bin/pip install pyshp
