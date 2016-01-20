@@ -6,12 +6,12 @@ RUN apt-get install -yq libnetcdf-dev libhdf5-dev libgeos-dev
 
 RUN ln -s /usr/lib/libgeos-3.4.2.so /usr/lib/libgeos.so
 
-RUN wget -O basemap-1.0.7.tar.gz http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/basemap-1.0.7/basemap-1.0.7.tar.gz/download
-        && tar xvf basemap-1.0.7.tar.gz
-        && cd ./basemap-1.0.7
-        && ./configure
-        && make 
-        && make install
+RUN wget -O basemap-1.0.7.tar.gz http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/basemap-1.0.7/basemap-1.0.7.tar.gz/download \
+        && tar xvf basemap-1.0.7.tar.gz \
+        && cd ./basemap-1.0.7 \
+        && ./configure \
+        && make \
+        && make install \
         && /opt/conda/envs/python2/bin/python2 setup.py install
 
 USER jovyan
