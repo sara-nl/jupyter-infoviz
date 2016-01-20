@@ -18,7 +18,8 @@ USER jovyan
 
 # Install Python 2 packages
 RUN conda install --name python2 \
-    'networkx=1.1*' \
+    'networkx=1.1*'\
+    'pandas-datareader=0.2*'\
     'pillow=3.0*'\
     'pyproj=1.9*'\
     'pil=1.1*'\
@@ -29,7 +30,7 @@ RUN conda install --name python2 \
 
 RUN /opt/conda/envs/python2/bin/pip install pyshp
 
-ENV PASSWORD 'spark@surfsara'
+ENV PASSWORD 'infoviz@uvahpc'
 
 USER root
 
