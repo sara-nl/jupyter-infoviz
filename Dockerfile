@@ -6,14 +6,6 @@ RUN apt-get install -yq libnetcdf-dev libhdf5-dev libgeos-dev
 
 RUN ln -s /usr/lib/libgeos-3.4.2.so /usr/lib/libgeos.so
 
-#RUN wget -O basemap-1.0.7.tar.gz http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/basemap-1.0.7/basemap-1.0.7.tar.gz/download \
-#        && tar xvf basemap-1.0.7.tar.gz \
-#        && cd basemap-1.0.7/geos-3.3.3 \
-#        && ./configure \
-#        && make \
-#        && make install \
-#        && /opt/conda/envs/python2/bin/python2 setup.py install
-
 USER jovyan
 
 # Install Python 2 packages
@@ -30,7 +22,7 @@ RUN conda install --name python2 \
 
 
 RUN cd /home/jovyan/work && \
-	wget -O http://beehub.nl/surfsara-hadoop/public/notebooks.tar.gz && \
+	wget -O notebooks.tar.gz http://beehub.nl/surfsara-hadoop/public/notebooks.tar.gz && \
 	tar -xvzf notebooks.tar.gz && \
 	rm notebooks.tar.gz && \
 	exit 0
