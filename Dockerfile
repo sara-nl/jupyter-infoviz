@@ -20,16 +20,9 @@ RUN conda install --name python2 \
     'basemap=1.0*'\
     && conda clean -yt
 
-
-RUN cd /home/jovyan/work && \
-	wget -O notebooks.tar.gz http://beehub.nl/surfsara-hadoop/public/notebooks.tar.gz && \
-	tar -xvzf notebooks.tar.gz && \
-	rm notebooks.tar.gz && \
-	exit 0
-
 RUN /opt/conda/envs/python2/bin/pip install pyshp
 
-ENV PASSWORD 'infoviz@uvahpc'
+ENV PASSWORD 'infovis@tud'
 
 USER root
 
