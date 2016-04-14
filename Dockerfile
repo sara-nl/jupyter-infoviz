@@ -3,7 +3,7 @@ FROM jupyter/datascience-notebook
 USER root
 
 RUN apt-get update && \
-    apt-get install -yq libnetcdf-dev libhdf5-dev libgeos-dev 
+    apt-get install -yq libnetcdf-dev libhdf5-dev libgeos-dev libgdal-dev
 
 RUN ln -s /usr/lib/libgeos-3.4.2.so /usr/lib/libgeos.so
 
@@ -21,7 +21,7 @@ RUN conda install --name python2 \
     'basemap=1.0*'\
     && conda clean -yt
 
-RUN /opt/conda/envs/python2/bin/pip install pyshp
+RUN /opt/conda/envs/python2/bin/pip install pyshp fiona xlrd folium shapely cesiumpy
 
 ENV PASSWORD 'infovis@tud'
 
