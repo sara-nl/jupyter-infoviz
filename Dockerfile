@@ -23,7 +23,7 @@ RUN conda install --name python2 \
 
 RUN /opt/conda/envs/python2/bin/pip install pyshp fiona xlrd folium shapely cesiumpy
 
-ENV PASSWORD 'infovis@tud'
+ENV PASSWORD 'infovis@surf'
 
 USER root
 
